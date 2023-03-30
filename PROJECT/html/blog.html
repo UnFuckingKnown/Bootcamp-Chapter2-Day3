@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/public/css/blog.css" />
+    <title>CREATING-BLOG</title>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <div class="navbar">
+      <img src="/public/asset/logo.png" alt="tidak ada gambar" />
+
+      <!-- list -->
+      <div class="navigation">
+        <a href="/">HOME</a>
+        <!-- <a href="/html/contact.html">CONTACT</a> -->
+      </div>
+      <!-- list -->
+      <!-- button right contact -->
+      <!-- <div class="contact-2">
+        <a href="/html/contact.html" class="right">CONTACT</a>
+      </div> -->
+      <!-- button right contact -->
+    </div>
+    <!-- navbar section -->
+
+    <div id="container">
+      <div class="form-input">
+        <form action="/new-blog" method="post">
+          <div class="section1">
+            <label  class="judul" for="inputtext">PROJECTNAME</label>
+            <br />
+            <input name="projectname" type="text" id="projectName" />
+          </div>
+
+          <div class="date">
+            <div class="sectionDate1">
+              <label for="startdate">START DATE</label>
+              <br />
+              <input name="startDate" type="date" id="startDate" />
+            </div>
+            <div class="sectionDate2">
+              <label for="enddate">End Date:</label>
+              <br />
+              <input name="endDate" type="date" id="endDate" />
+            </div>
+          </div>
+
+          <div class="section1">
+            <label for="description">DESCRIPTION</label>
+            <br />
+            <input name="description" type="text" id="description" />
+          </div>
+
+          <div class="image">
+            <label for="image">IMAGE</label>
+            <br />
+            <input type="file" id="image" />
+            <br />
+          </div>
+          <div class="slicer">
+            <h4>TECHNOLOGIES</h4>
+          </div>
+
+          <div class="checkbox">
+            <div class="checkbox1">
+              <input type="checkbox" id="checkbox1" />
+              <label for="checkbox">JAVASCRIPT</label>
+              <br />
+              <input type="checkbox" id="checkbox2" />
+              <label for="checkbox">PHP</label>
+            </div>
+            <div class="checkbox2">
+              <input type="checkbox" id="checkbox3" />
+              <label for="checkbox">GOLANG</label>
+              <br />
+              <input type="checkbox" id="checkbox4" />
+              <label for="checkbox">PYTHON</label>
+            </div>
+          </div>
+          <div class="section">
+            <div class="button">
+              <button class="submit-button">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    {{range $index, $Blogs := .Blogs}}
+    <div class="container2">
+      
+      <div class="card">
+        <div class="left">
+          <img class="mainimg" src="public/asset/reynajpg.jpg" alt="">
+        </div>
+        <div class="right">
+         
+          <a class="title" href="/mainblog/{{$index}}"><h1>{{$Blogs.Title}}</h1></a>
+          <h4 class="date-down">{{$Blogs.NewPostdate}} HARI | {{$Blogs.Author}}</h4>
+
+          <div class="main-down">
+            <p>{{$Blogs.Content}}</p>
+          </div>
+      
+         
+        </div>
+        <div class="button-down">
+          <a href="">UPDATE</a>
+          <a href="/delete/{{$index}}">DELETE</a>
+        </div>
+        
+      </div>   
+    </div>
+    {{end}}
+
+  </body>
+</html>

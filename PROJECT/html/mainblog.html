@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/mainblog.css" />
+    <title>MAIN BLOG</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/public/asset/logo.png" alt="tidak ada gambar" />
+
+      <!-- list -->
+      <div class="navigation">
+        <a href="/">HOME</a>
+        <a href="/project">MY PROJECT</a>
+      </div>
+      <!-- list -->
+      <!-- button right contact -->
+      <!-- <div class="contact-2">
+        <a href="/CONTACT/contact.html" class="right">CONTACT</a>
+      </div> -->
+      <!-- button right contact -->
+    </div>
+    <div class="container">
+      <!-- bagian atas -->
+      <h1>{{.Blog.Title}}</h1>
+      <div class="atas">
+        <div class="atas-kiri">
+          <img src="/public/MAINBLOG/image.jpeg" alt="tidak ada gambar" />
+        </div>
+        <div class="atas-kanan">
+          <div class="text">
+            <h2>Duration</h2>
+            <div class="date">
+              <img src="/public/MAINBLOG/kalender.png" alt="" />
+              <div class="time">
+                <h5>Jan 05 2003 - Feb 09 2005</h5>
+              </div>
+            </div>
+            <div class="date">
+              <img class="jam" src="/public/MAINBLOG/jam.png" alt="" />
+              <div class="time">
+                <h5>1 month</h5>
+              </div>
+            </div>
+            <div class="technologies">
+              <h1>Technologies</h1>
+              <div class="icon">
+                <div class="tech1">
+                  <img src="/public/MAINBLOG/javascript.png" alt="">
+                  <br>
+                  <img src="/public/MAINBLOG/php.png" alt="">
+                </div>
+                <div class="tech2">
+                  <img src="/public/MAINBLOG/python.png" alt="">
+                  <br>
+                  <img src="/public/MAINBLOG/golang.png" alt="">
+                </div>
+              
+              </div>
+           
+             
+
+            </div>
+          </div>
+        </div>
+
+        <!-- bagian atas -->
+      </div>
+      
+      <div class="bawah">
+        <h2></h2>
+        <p>
+         {{.Blog.Content}}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
